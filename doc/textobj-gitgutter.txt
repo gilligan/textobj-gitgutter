@@ -1,0 +1,66 @@
+*textobj-gitgutter.txt*   text object plugin for gitgutter change hunks.
+
+
+                            -----------------
+                            textobj-gitgutter
+                            -----------------
+
+version : 0.1
+author  : tobias pflug <tobias.pflug@gmail.com>
+license : MIT license
+
+================================================================================
+CONTENTS                                              *textobj-gitgutter-contents*
+
+    1. Introduction ............... |textobj-gitgutter-intro|
+    2. Requirements ............... |textobj-gitgutter-requirements|
+    3. Key Mapings ................ |textobj-gitgutter-key-mappings|
+    4. Customizing ................ |textobj-gitgutter-customizing|
+    5. Changelog .................. |textobj-gitgutter-changelog|
+
+================================================================================
+INTRODUCTION                                           *textobj-gitgutter-intro*
+
+*textobj-gitgutter* is a vim plugin that provides a text object to select git
+change hunks as provided by the gitgutter plugin. The latest version of
+this plugin can be found at: <https://github.com/gilligan/textobj-gitgutter.vim>
+
+The gitgutter plugin parses git diff output and sets signs to highlight where
+lines have been added/removed/changed. This plugin uses this information to
+provide a hunk text object so that you can select individual change hunks.
+
+================================================================================
+REQUIREMENTS                                      *textobj-gitgutter-requirements*
+
+    - vim 7.2 or later
+    - textobj-user <https://github.com/vim-scripts/textobj-user.git>
+    - vim-gitgutter <https://github.com/airblade/vim-gitgutter.git>
+
+
+================================================================================
+KEY MAPPINGS                                      *textobj-gitgutter-key-mappings*
+
+*<Plug>(textobj-gitgutter-i)* :
+Selects all lines of the change hunk the cursor currently lies within.
+
+================================================================================
+CUSTOMIZING                                        *textobj-gitgutter-customizing*
+
+This plugin will define the following key mappings in Visual mode and
+Operator-pending mode automatically.  If you don't want these key mappings,
+define |g:textobj_comment_no_default_key_mappings| before this plugin is
+loaded (e.g. in your |vimrc|).  You can also use
+|:TextobjCommentDefaultKeyMappings| to redefine these key mappings.  This
+command doesn't override existing {lhs}s unless [!] is given.
+
+	{lhs}	{rhs}			~
+	-----	---------------------------	~
+	ih	    <Plug>(textobj-gitgutter-i)
+
+================================================================================
+CHANGELOG                                            *textobj-gitgutter-changelog*
+
+v0.1    Initial release
+
+
+vim:ts=4:et:ft=help:
