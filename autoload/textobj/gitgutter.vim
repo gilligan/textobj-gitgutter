@@ -9,7 +9,7 @@ function! textobj#gitgutter#select_i()
     if (curr_line >= start_pos && curr_line <= end_pos)
         execute 'normal! ' . (end_pos-1) . 'G$'
         let selection_end = getpos('.')
-        return = ['v', [0, start_pos, 1, 0], selection_end ]
+        return ['v', [0, start_pos, 1, 0], selection_end ]
     endif
   endfor
   return 0
