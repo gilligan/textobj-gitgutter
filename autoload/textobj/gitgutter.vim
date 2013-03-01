@@ -1,8 +1,11 @@
 
 function! textobj#gitgutter#select_i()
-  let curr_line = line('.')
   call GitGutter()
+  if !s:line_has_sign()
+      return 0
+  endif
   let hunks = GitGutterGetHunks()
+  let curr_line = line('.')
   for h in hunks
     let start_pos = h[2]
     let end_pos = start_pos + h[3]
@@ -13,4 +16,11 @@ function! textobj#gitgutter#select_i()
     endif
   endfor
   return 0
+endfunction
+
+function! s:line_has_sign()
+    redir => signs
+    silent exe ":sign place file=" . expand("%:t")
+    redir END
+    return (signs =~ 'line=' . line('.'))
 endfunction
