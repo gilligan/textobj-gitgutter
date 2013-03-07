@@ -1,4 +1,3 @@
-
 function! textobj#gitgutter#select_i()
   call GitGutter()
   if !s:line_has_sign()
@@ -22,5 +21,5 @@ function! s:line_has_sign()
     redir => signs
     silent exe ":sign place file=" . expand("%:t")
     redir END
-    return (signs =~ 'line=' . line('.'))
+    return (signs =~ 'line=' . line('.') . ' .*name=GitGutter.*')
 endfunction
