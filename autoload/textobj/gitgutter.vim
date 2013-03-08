@@ -21,5 +21,5 @@ function! s:line_has_sign()
     redir => signs
     silent exe ":sign place file=" . expand("%:f")
     redir END
-    return (signs =~ 'line=' . line('.') . ' .*name=GitGutter.*')
+    return (signs =~ line('.') . ' .*name=GitGutter.*')
 endfunction
