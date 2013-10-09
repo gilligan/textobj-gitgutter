@@ -14,6 +14,6 @@ The default mapping `ih`for an inner hunk. See the included documentation on how
 
 Installation
 ------------
-I recommend installing it via vundle (https://github.com/gmarik/vundle):
+I recommend installing it via vundle ([https://github.com/gmarik/vundle](https://github.com/gmarik/vundle)):
 
     Bundle 'gilligan/textobj-gitgutter'
