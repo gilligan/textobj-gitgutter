@@ -1,5 +1,5 @@
 function! textobj#gitgutter#select_i()
-  call GitGutter(expand('%:p'))
+  GitGutter
   if !s:line_has_sign()
       return 0
   endif
